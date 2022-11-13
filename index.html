@@ -1,11 +1,63 @@
-<h1>Omer Dolev</h1>
-<h2>About me</h2>
-I'm Omer Dolev, I'm a web developer.<br />
-I'm from Tzur-Izhak
-<h2>What I like</h2>
-<ul>
-	<li>Programming</li>
-	<li><a href="rhcp.html">Red Hot Chili Peppers</a></li>
-	<li><a href="hk.html">Hollow Knight</a></li>
-</ul>
-<h2>Something something...</h2>
+<html>
+
+<head>
+	<title>Omer Dolev</title>
+
+	<style>
+		/* This text is a comment. The browser will not display it at all.
+		** You can igonre what's written here and you don't have to write these comments in your code, they are here to give you reference.
+		**/
+
+		
+		/* Tag selector */
+		body {
+			background: black;
+			color: white;
+		}
+
+		h1 {
+			text-align: center;
+			color: hotpink;
+		}
+
+		h2 {
+			color: whitesmoke;
+		}
+
+		/* Class selector */
+		.new {
+			background: yellow;
+			color: black;
+		}
+
+		/* Combined selector (tag + class) */
+		li.new {
+			background: red;
+		}
+
+		/* Id selector */
+		#special-p {
+			font-size: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Omer Dolev</h1>
+	<h2>About me</h2>
+	<p id="special-p">
+		I'm Omer Dolev, I'm a web developer.<br />
+		I'm from Tzur-Izhak
+	</p>
+	<h2>What I like</h2>
+	<ul>
+		<li><a href="programming.html">Programming</a></li>
+		<li><a href="rhcp.html">Red Hot Chili Peppers</a></li>
+		<li class="new"><a class="new" href="hk.html">Hollow Knight</a></li>
+	</ul>
+	<h2 class="new">Something something...</h2>
+	<h2 class="new">Something else</h2>
+	<h2>Something special</h2>
+</body>
+
+</html>
