@@ -2,15 +2,39 @@
 
 <head>
     <title>Omer Dolev</title>
+    <style>
+        .breadcrumbs li {
+            display: inline;
+        }
+
+        .breadcrumbs li::before {
+            content: "➡";
+        }
+
+        body {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Omer Dolev</h1>
     <h2>Red Hot Chili Peppers</h2>
-    <a href="/">🔙</a>
+    <ol class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/asdasda">Music</a></li>
+        <li>Red Hot Chili Peppers</li>
+    </ol>
     <p>
         Red Hot Chili Peppers is an American rock-funk band.
     </p>
+    <h3>Band members</h3>
+    <ul>
+        <li>Anthony Kidies</li>
+        <li>Chad Smith</li>
+        <li>Flea</li>
+        <li>John</li>
+    </ul>
     <a href="https://redhotchilipeppers.com/" target="_blank">
         <img src="rhcp-logo.jpg" width="100%" />
     </a>
