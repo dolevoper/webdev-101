@@ -1,0 +1,58 @@
+:root {
+    --component-gap: 64px;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: calc(1rem + 8px * 2 + var(--component-gap));
+    padding-bottom: 100vh;
+}
+
+header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+header h3 a {
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    gap: 16px;
+    list-style-type: none;
+}
+
+h1, article {
+    margin: var(--component-gap) 0;
+}
+
+article h2 {
+    margin: 16px 0;
+}

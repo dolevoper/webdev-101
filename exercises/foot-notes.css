@@ -1,0 +1,29 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 60%;
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 100vh;
+}
+
+#foot-notes {
+    border-top: 1px solid black;
+}
+
+.note-link {
+    color: blue;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Notes</title>
+    <link rel="stylesheet" href="./foot-notes.css" />
+    <style>
+        /*
+        ** It is common practice to include more details and references about terms used in a document as foot notes.
+        ** When using foot notes, the terms are numbered according to the matching foot note and we can provide an internal link to take the user directly to the note.
+        ** It's also common to style the inline references in a way that shows they are not intended to be part of the text.
+        ** Style the note links so they are a bit smaller than the normal text, positioned at the top of the line, and are enclused by brackets (see foot-notes.png)
+        */
+        .note-link {
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus<a href="#note-1" class="note-link">1</a> quis leo eu tellus sagittis aliquam ut congue ex. Suspendisse consequat placerat orci, in placerat turpis. Pellentesque pellentesque ex et molestie molestie. Nam id tellus<a href="#note-2" class="note-link">2</a> sit amet erat ornare porta sed ut massa. Cras suscipit tellus justo, a venenatis tellus faucibus in. Duis eleifend ante mi, vitae volutpat urna tincidunt ut. Praesent pharetra, ligula vitae tristique ultrices, nisl neque bibendum nibh, a blandit augue purus nec risus. Pellentesque varius magna eu iaculis mattis. Integer porttitor sapien id purus condimentum vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum ut ligula eu efficitur. Morbi sagittis lacus varius, accumsan augue nec, tristique ante. Donec dapibus leo nec rhoncus ultricies.</p>
+        <p>Sed pellentesque arcu sed bibendum tristique. Suspendisse malesuada a odio et laoreet. Duis et lacus porta orci dictum feugiat. Sed semper at justo sed congue. Curabitur nec purus ultricies, ullamcorper felis vel, mattis purus. Nulla varius tellus sed nibh pretium, id lacinia augue varius. Cras volutpat eu est nec tincidunt<a href="#note-3" class="note-link">3</a>. Morbi euismod dolor id sem gravida eleifend et eget felis. Nulla facilisi. Donec non feugiat velit. Phasellus sit amet blandit odio, quis sagittis lorem. Integer dignissim libero non velit tristique, nec vestibulum urna mollis. Aliquam erat volutpat. Sed condimentum ut est sed imperdiet.</p>
+        <p>Nulla facilisi. Fusce id mauris sit amet sem suscipit imperdiet. Curabitur non auctor nisi. Quisque cursus scelerisque diam at hendrerit. Duis quis lacus dolor. Curabitur elit est, porta eu lacus sit amet, ultrices hendrerit metus. Mauris ut nulla sem. Suspendisse finibus odio felis, ultrices pulvinar dui consectetur vel. Maecenas pulvinar justo nec sodales congue. Mauris in sapien accumsan, feugiat urna vel, consectetur risus. Aenean ut quam efficitur, varius felis nec, sodales leo. Cras at eros porta, tincidunt lacus et, gravida elit.</p>
+        <p>Curabitur tempor orci magna, blandit porta sapien condimentum id. Sed malesuada fringilla nisl sed elementum. Sed at lacus et enim vestibulum vulputate. Phasellus a massa diam. Vivamus<a href="#note-4" class="note-link">4</a> posuere suscipit eros ut viverra. Ut sit amet dignissim ligula. Praesent quis ornare lacus. Suspendisse maximus lectus id nisi auctor volutpat. Vestibulum vitae laoreet elit. Nam tempus, nibh in sodales tempus, nisl mauris varius mauris, nec gravida quam dolor at nisi. Vestibulum eget libero in mauris aliquam pretium sed non libero. Curabitur pellentesque erat urna, quis euismod massa hendrerit ut.</p>
+        <p>In vitae diam ac justo aliquet faucibus. Curabitur nibh risus, porta id tellus quis, pulvinar lacinia dolor. Donec auctor mollis arcu vulputate condimentum. Aenean varius quam id sodales commodo. Pellentesque fringilla cursus congue. Morbi id nulla ullamcorper ligula ornare aliquam eget non ipsum. Aenean euismod ut risus efficitur suscipit. Aliquam erat volutpat. Maecenas bibendum, felis quis ornare pretium, ex lorem egestas ligula, nec suscipit metus urna vel ante. Nulla facilisi. Proin quis erat justo. Praesent consectetur mauris sed augue bibendum faucibus.</p>
+        <p>Donec gravida maximus augue, quis volutpat nisi condimentum sed. Vestibulum efficitur tortor leo, nec laoreet velit lobortis in. Ut consectetur ligula metus, in elementum est euismod id. Sed cursus risus non erat viverra consectetur. Etiam<a href="#note-5" class="note-link">5</a> rhoncus dapibus orci a dapibus. Vestibulum tincidunt at justo vitae pulvinar. Aliquam et dictum justo. In hac habitasse platea dictumst. Duis sem risus, lacinia in nibh at, efficitur varius sem. Sed interdum pharetra quam vel maximus. Pellentesque viverra purus felis, id vehicula lectus lobortis at. Etiam non elit augue. Morbi a interdum massa. Aliquam iaculis aliquet dignissim. Duis consequat laoreet est, eu sodales odio tempus ac. Nulla et sapien aliquam ipsum vehicula fermentum eget bibendum nisl.</p>
+        <p>Maecenas dapibus maximus mauris, quis convallis quam lacinia vel. Sed metus dui, elementum non enim quis, tincidunt facilisis velit. Suspendisse eu interdum quam, in viverra lorem. Mauris ac volutpat magna, id tristique massa. Mauris blandit augue mollis feugiat porta. Curabitur consectetur in velit id feugiat. Etiam ac laoreet risus, consectetur suscipit justo. Mauris id lorem porttitor, sollicitudin massa vitae, mattis orci.</p>
+        <section id="foot-notes">
+            <ol>
+                <li id="note-1">Quisque a augue eget massa commodo porttitor sed in mi.</li>
+                <li id="note-2">Nulla at lacus sit amet sem tincidunt facilisis.</li>
+                <li id="note-3">Integer condimentum est quis eros faucibus semper.</li>
+                <li id="note-4">Nulla eget purus a eros mollis consequat at vel odio.</li>
+                <li id="note-5">Donec lacinia sem vitae nisl ullamcorper semper.</li>
+            </ol>
+            <a href="#">Back to top</a>
+        </section>
+    </main>
+</body>
+</html>
