@@ -13,9 +13,30 @@
         body {
             background: chocolate;
         }
+
+        .primary {
+            background: cornflowerblue;
+            color: seashell;
+            border: 2px solid currentColor;
+            padding: 8px 16px;
+            font-size: 1.5rem;
+            border-radius: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .primary:hover {
+            background: royalblue;
+            cursor: pointer;
+        }
+
+        .primary:active {
+            background: seashell;
+            color: cornflowerblue;
+        }
     </style>
 </head>
 <body>
-    <button class="primary">Click me</button>
+    <button class="primary">Send email</button>
 </body>
 </html>
