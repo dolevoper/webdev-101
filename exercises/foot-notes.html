@@ -14,7 +14,18 @@
         ** Style the note links so they are a bit smaller than the normal text, positioned at the top of the line, and are enclused by brackets (see foot-notes.png)
         */
         .note-link {
-            
+            font-size: 0.6rem;
+            /* vertical-align: top; */
+            position: relative;
+            top: -0.4rem;
+        }
+
+        .note-link::before {
+            content: "[";
+        }
+
+        .note-link::after {
+            content: "]";
         }
     </style>
 </head>

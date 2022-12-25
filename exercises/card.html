@@ -12,9 +12,10 @@
 
         html {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* font-size: 3rem; */
         }
 
-        body {
+        body, p {
             margin: 0;
         }
 
@@ -22,6 +23,53 @@
             width: 100%;
             display: block;
         }
+
+        .card {
+            /* width: 650px; */
+            /* width: 60%; */
+            max-width: 650px;
+            /* min-width: ;
+            min-height: ;
+            min-width: ; */
+            margin: 8px auto;
+            /* margin-left: auto;
+            margin-right: auto; */
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            box-shadow: 0 4px 16px 4px rgb(0 0 0 / 0.3);
+            border-radius: 4px;
+            padding: 8px;
+        }
+
+        .card .image-container {
+            margin-top: -8px;
+            margin-left: -8px;
+            margin-right: -8px;
+            /* margin: -8px; */
+        }
+
+        .card .image-container img {
+            border-radius: 4px 4px 0 0;
+        }
+
+        .card .image-container p {
+            margin-top: calc(-1.1rem - 8px);
+            margin-left: 8px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .card .image-container p a {
+            color: inherit;
+        }
+
+        .card .image-container .padder {
+            height: 4px;
+        }
+
+        /* .card h2,
+        .card p {
+            padding: 8px;
+        } */
     </style>
 </head>
 <body>
