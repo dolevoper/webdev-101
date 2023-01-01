@@ -11,6 +11,22 @@
             --tooltip-color: aliceblue;
             --arrow-size: 20px;
         }
+
+        .tooltip-container {
+            position: relative;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: calc(1.25rem + var(--arrow-size));
+            left: 0;
+        }
+
+        .tooltip-title:hover + .tooltip,
+        .tooltip:hover {
+            display: revert;
+        }
     </style>
 </head>
 <body>
@@ -18,9 +34,7 @@
         <h1>Lorem ipsum</h1>
     </header>
     <main>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut <div class="tooltip-container"><span>scelerisque</span><div class="tooltip">Etiam pharetra elit non metus semper, ac convallis quam eleifend.</div></div> risus quis cursus lacinia. Cras et nunc mi. Mauris at convallis libero. Phasellus vulputate malesuada mi vel euismod. Nam facilisis turpis neque, eu bibendum quam bibendum quis. Donec sit amet urna laoreet, molestie neque et, ullamcorper sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum pharetra nisi in sagittis mollis. Cras eu magna nec lorem pulvinar venenatis. Etiam tempus ex leo, at suscipit ipsum consectetur at.
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut <div class="tooltip-container"><span class="tooltip-title">scelerisque</span><div class="tooltip">Etiam pharetra elit non metus semper, ac convallis quam eleifend.</div></div> risus quis cursus lacinia. Cras et nunc mi. Mauris at convallis libero. Phasellus vulputate malesuada mi vel euismod. Nam facilisis turpis neque, eu bibendum quam bibendum quis. Donec sit amet urna laoreet, molestie neque et, ullamcorper sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum pharetra nisi in sagittis mollis. Cras eu magna nec lorem pulvinar venenatis. Etiam tempus ex leo, at suscipit ipsum consectetur at.
     </main>
 </body>
 </html>
