@@ -6,13 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contoso Web Design</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <style>
-        *, *::after, *::before {
+        *,
+        *::after,
+        *::before {
             box-sizing: content-box;
         }
 
-        html {
-            font-family: 'Inter';
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            :root {
+                font-family: 'Inter var', sans-serif;
+            }
         }
 
         body {
@@ -48,6 +58,19 @@
             height: 36px;
             margin-top: 25px;
         }
+
+        main {
+            margin-left: 64px;
+            margin-right: 64px;
+        }
+
+        .card {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            width: 50%;
+            height: 208px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -57,6 +80,15 @@
         <p>Professional web design for every purpose.</p>
         <button>Learn more</button>
     </header>
+    <main>
+        <section>
+            <h2>Who are we?</h2>
+        </section>
+        <section>
+            <h2>Clients Recommend</h2>
+            <div class="card"></div>
+        </section>
+    </main>
 </body>
 
 </html>
