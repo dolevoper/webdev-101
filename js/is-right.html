@@ -12,7 +12,28 @@
         const b = Number(prompt("Enter length of second leg"));
         const c = Number(prompt("Enter length of hypotenuse"));
 
-        alert("is it a right triangle or not??");
+        const expectedCSquared = a * a + b * b;
+        const actualCSqaured = c * c;
+        const isRightTriangle = actualCSqaured === expectedCSquared;
+
+        // Types of values we know:
+        //      const number = 5;
+        //      const string = "hello";
+        //      Boolean values
+        //          const trueBoolean = true;
+        //          const falseBoolean = false;
+
+        // Operators:
+        //      *:          binary, (number, number) -> number
+        //      +:          binary, (number, number) -> number
+        //      ===:        binary, (any, any) -> boolean
+        //      ! (not):    unary, boolean -> boolean  
+
+        if (isRightTriangle) {
+            alert("This is indeed a right triangle");
+        } else {
+            alert("This is not a right triangle");
+        }
     </script>
 </body>
 </html>

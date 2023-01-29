@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Right Triangle 2.0</title>
+</head>
+
+<body>
+    <script>
+        const a = Number(prompt("Enter length of first edge"));
+        const b = Number(prompt("Enter length of second edge"));
+        const c = Number(prompt("Enter length of third edge"));
+
+        // isNaN(5) === false
+        // isNaN(Number("hello")) === true
+        // isNaN - number -> boolean
+
+        const isAHypotenuse = b * b + c * c === a * a;
+        const isBHypotenuse = a * a + c * c === b * b;
+        const isCHypotenuse = a * a + b * b === c * c;
+
+        const isRightTriangle = isAHypotenuse || isBHypotenuse || isCHypotenuse;
+
+        // | - pipe
+        // || - OR (inclusive or) - (boolean, boolean) -> boolean
+        // Truth table:
+        // false || false === false
+        // true || false === true
+        // false || true === true
+        // true || true === true
+
+        if (isRightTriangle) {
+            alert("This is a right triangle");
+        } else {
+            alert("This is not a right triangle");
+        }
+        
+        // XOR (eXclusive or)
+        // Truth table:
+        // false || false === false
+        // true || false === true
+        // false || true === true
+        // true || true === false
+    </script>
+</body>
+
+</html>
