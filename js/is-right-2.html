@@ -14,36 +14,42 @@
         const b = Number(prompt("Enter length of second edge"));
         const c = Number(prompt("Enter length of third edge"));
 
-        // isNaN(5) === false
-        // isNaN(Number("hello")) === true
-        // isNaN - number -> boolean
+        const isInputInvalid = isNaN(a) || isNaN(b) || isNaN(c);
 
-        const isAHypotenuse = b * b + c * c === a * a;
-        const isBHypotenuse = a * a + c * c === b * b;
-        const isCHypotenuse = a * a + b * b === c * c;
-
-        const isRightTriangle = isAHypotenuse || isBHypotenuse || isCHypotenuse;
-
-        // | - pipe
-        // || - OR (inclusive or) - (boolean, boolean) -> boolean
-        // Truth table:
-        // false || false === false
-        // true || false === true
-        // false || true === true
-        // true || true === true
-
-        if (isRightTriangle) {
-            alert("This is a right triangle");
+        if (isInputInvalid) {
+            alert("Can't calculate. Please enter numbers only.");
         } else {
-            alert("This is not a right triangle");
+            // isNaN(5) === false
+            // isNaN(Number("hello")) === true
+            // isNaN - number -> boolean
+
+            const isAHypotenuse = b * b + c * c === a * a;
+            const isBHypotenuse = a * a + c * c === b * b;
+            const isCHypotenuse = a * a + b * b === c * c;
+
+            const isRightTriangle = isAHypotenuse || isBHypotenuse || isCHypotenuse;
+
+            // | - pipe
+            // || - OR (inclusive or) - (boolean, boolean) -> boolean
+            // Truth table:
+            // false || false === false
+            // true || false === true
+            // false || true === true
+            // true || true === true
+
+            if (isRightTriangle) {
+                alert("This is a right triangle");
+            } else {
+                alert("This is not a right triangle");
+            }
+
+            // XOR (eXclusive or)
+            // Truth table:
+            // false || false === false
+            // true || false === true
+            // false || true === true
+            // true || true === false
         }
-        
-        // XOR (eXclusive or)
-        // Truth table:
-        // false || false === false
-        // true || false === true
-        // false || true === true
-        // true || true === false
     </script>
 </body>
 

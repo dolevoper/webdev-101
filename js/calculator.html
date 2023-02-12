@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <script>
+        // If first number is NaN, show error message and stop
+        // If second number is NaN, show error message and stop
+        // Print the result of the equation
+        // If operator is not form the list, show error message and stop
+        // If operator is / and second number is 0, show error message and stop
+
+        const firstNum = Number(prompt("Enter first number"));
+
+        if (isNaN(firstNum)) {
+            alert("Please enter a valid number");
+        } else {
+            const secondNum = Number(prompt("Enter second number"));
+
+            if (isNaN(secondNum)) {
+                alert("Please enter a valid number");
+            } else {
+                const operator = prompt("Choose operator: +, -, *, /");
+
+                switch (operator) {
+                    case "+":
+                        alert("Result: " + (firstNum + secondNum));
+                        break;
+                    case "-":
+                        alert("Result: " + (firstNum - secondNum));
+                        break;
+                    case "*":
+                        alert("Result: " + (firstNum * secondNum));
+                        break;
+                    case "/":
+                        if (secondNum === 0) {
+                            alert("Division by 0 is prohibited");
+                        } else {
+                            alert("Result: " + (firstNum / secondNum));
+                        }
+                        
+                        break;
+                    default:
+                        alert("Unrecognizable operator: " + operator);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
