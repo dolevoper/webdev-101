@@ -8,13 +8,14 @@
 </head>
 <body>
     <script>
-        // 0. Save the sum
-        // 1. Print avg, max and min
-        // 2. Print all grades before stats
-        // 3. Print grade number based 1 (instead of base 0)
-        // 4. Start by asking how many grades
-        // 5. Validate that every grade is a number. If not a number, show error and stop
-        const numberOfGrades = Number(prompt("How many grades do you want to submit?"));
+        // 1. When input is an empty string, ask again
+        // 2. When user cancels, ask again
+        // 3. Duplicate this file (grades-4.html), when user cancels an input, stop the program
+        let numberOfGrades = Number(prompt("How many grades do you want to submit?"));
+
+        while (isNaN(numberOfGrades)) {
+            numberOfGrades = Number(prompt("Invalid input, please enter a number.\nHow many grades do you want to submit?"));
+        }
 
         let sum = 0;
         let max = 0;
@@ -24,12 +25,11 @@
 
         //   V first    V second            V third
         for (let i = 1; i <= numberOfGrades; i++) {
-            const grade = Number(prompt("Enter grade " + i));   // 1 X
+            let grade = Number(prompt("Enter grade " + i));   // 1 X
                                                                 // "1" V
 
-            if (isNaN(grade)) {
-                isInputInvalid = true;
-                break;
+            while (isNaN(grade)) {
+                grade = Number(prompt("Invalid input, please enter a number.\nEnter grade " + i));
             }
             
             sum = sum + grade;
