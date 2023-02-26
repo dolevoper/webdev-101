@@ -11,11 +11,13 @@
         // 1. When input is an empty string, ask again
         // 2. When user cancels, ask again
         // 3. Duplicate this file (grades-4.html), when user cancels an input, stop the program
-        let numberOfGrades = Number(prompt("How many grades do you want to submit?"));
+        let numberOfGrades = prompt("How many grades do you want to submit?");
 
-        while (isNaN(numberOfGrades)) {
-            numberOfGrades = Number(prompt("Invalid input, please enter a number.\nHow many grades do you want to submit?"));
+        while (numberOfGrades === null || numberOfGrades === "" || isNaN(Number(numberOfGrades))) {
+            numberOfGrades = prompt("Invalid input, please enter a number.\nHow many grades do you want to submit?");
         }
+
+        numberOfGrades = Number(numberOfGrades);
 
         let sum = 0;
         let max = 0;
@@ -25,13 +27,14 @@
 
         //   V first    V second            V third
         for (let i = 1; i <= numberOfGrades; i++) {
-            let grade = Number(prompt("Enter grade " + i));   // 1 X
-                                                                // "1" V
+            let grade = prompt("Enter grade " + i); // 1 X
+                                                    // "1" V
 
-            while (isNaN(grade)) {
-                grade = Number(prompt("Invalid input, please enter a number.\nEnter grade " + i));
+            while (grade === null || grade === "" || isNaN(Number(grade))) {
+                grade = prompt("Invalid input, please enter a number.\nEnter grade " + i);
             }
-            
+
+            grade = Number(grade);
             sum = sum + grade;
             max = Math.max(max, grade);
             min = Math.min(min, grade);

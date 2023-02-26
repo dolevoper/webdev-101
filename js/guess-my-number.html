@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess my number</title>
+</head>
+
+<body>
+    <script>
+        // 1. When user click cancel, stop the game and annouce use loss
+        // 2. Validate input is a number (not a string and not empty)
+        // 3. Ask for level of difficullty:
+        //      1. upperBoundary = 10
+        //      2. upperBoundary = 100
+        //      3. upperBoundary = 1000
+        const upperBoundary = 20;
+        const secret = Math.round((Math.random() * (upperBoundary - 1)) + 1);
+
+        let guess = prompt("Please enter your guess:");
+        let guessAsNumber = Number(guess);
+
+        // while (guessAsNumber < secret || guessAsNumber > secret) {
+        // while (!(guessAsNumber === secret)) {
+        while (guessAsNumber !== secret) {
+            if (guessAsNumber > secret) {
+                guess = prompt("Too high, try again");
+            } else {
+                guess = prompt("Too low, try again");
+            }
+
+            guessAsNumber = Number(guess);
+        }
+
+        alert("Congratulations, you win! My number was " + secret + ".");
+    </script>
+</body>
+
+</html>
