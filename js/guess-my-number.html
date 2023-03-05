@@ -10,31 +10,96 @@
 
 <body>
     <script>
-        // 1. When user click cancel, stop the game and annouce use loss
-        // 2. Validate input is a number (not a string and not empty)
-        // 3. Ask for level of difficullty:
-        //      1. upperBoundary = 10
-        //      2. upperBoundary = 100
-        //      3. upperBoundary = 1000
-        const upperBoundary = 20;
+        // 1.
+        // Create a function named createSecret.
+        // createSecret has 1 parameter: upperBoudary of type number.
+        // createSecret returns a random, whole number, between 1 and upperBoundary.
+        // Use createSecret to initiate the variable secret
+
+        // 2.
+        // Create a function named promptGuess.
+        // promptGuess has 1 parameter: upperBoundary of type number.
+        // promptGuess returns a number or null.
+        // promptGuess asks the user for a guess (using the prompt function) and validates the guess:
+        //      1. If the guess is a valid number between 1 and upperBoundary, return it
+        //      2. If the guess is a valid number lower than 1 or higher than upperBoundary, ask again
+        //      3. If the guess is not a valid number or an empty string, ask again
+        //      4. If the user hits cancel in the prompt, return null
+        // Use promptGuess to get the user's guess (should be used twice).
+        let difficullty = prompt(
+            "Please select difficulty level:\n" +
+            "    1. Easy (number will be between 1 and 10)\n" +
+            "    2. Standard (number will be between 1 and 100)\n" +
+            "    3. Hard (number will be between 1 and 1000)\n"
+        );
+        
+        let upperBoundary = getUpperBoundary(difficullty);
+
+        while (isNaN(upperBoundary)) {
+            difficullty = prompt(
+                "Please enter a valid choice.\n" +
+                "Please select difficulty level:\n" +
+                "    1. Easy (number will be between 1 and 10)\n" +
+                "    2. Standard (number will be between 1 and 100)\n" +
+                "    3. Hard (number will be between 1 and 1000)\n"
+            );
+
+            upperBoundary = getUpperBoundary(difficullty);
+        }
+
         const secret = Math.round((Math.random() * (upperBoundary - 1)) + 1);
 
         let guess = prompt("Please enter your guess:");
         let guessAsNumber = Number(guess);
 
-        // while (guessAsNumber < secret || guessAsNumber > secret) {
-        // while (!(guessAsNumber === secret)) {
-        while (guessAsNumber !== secret) {
-            if (guessAsNumber > secret) {
-                guess = prompt("Too high, try again");
-            } else {
-                guess = prompt("Too low, try again");
-            }
-
+        while (guess === "" || isNaN(guessAsNumber)) {
+            guess = prompt("Please enter a number.\nPlease enter your guess:");
             guessAsNumber = Number(guess);
         }
 
-        alert("Congratulations, you win! My number was " + secret + ".");
+        while (guess !== null && guessAsNumber !== secret) {
+            let message;
+
+            if (guessAsNumber > secret) {
+                message = "Too high, try again";
+            } else {
+                message = "Too low, try again";
+            }
+            
+            guess = prompt(message);
+            guessAsNumber = Number(guess);
+
+            while (guess === "" || isNaN(guessAsNumber)) {
+                guess = prompt(
+                    "Please enter a number.\n" +
+                    message
+                );
+                guessAsNumber = Number(guess);
+            }
+        }
+
+        if (guessAsNumber === secret) {
+            alert("Congratulations, you win! My number was " + secret + ".");
+        } else {
+            alert("Too bad, my number was " + secret + ".");
+        }
+
+        function getUpperBoundary(difficullty) {
+            switch (difficullty.toLowerCase().trim()) {
+                case "1":
+                case "easy":
+                    return 10;
+                    break;
+                case "2":
+                case "standard":
+                    return 100;
+                    break;
+                case "3":
+                case "hard":
+                    return 1000;
+                    break;
+            }
+        }
     </script>
 </body>
 
