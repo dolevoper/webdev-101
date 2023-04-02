@@ -1,62 +1,83 @@
-// 1. Handle user clicks cancel in difficulty menu
+// 1. Track number of guesses and display after win
+// 2. Add option to limit number of guesses
+// 3. BONUS - save difficulty level between refreshes
 
-// 2. Build the menu:
-//      Should be able to start a new game, set boundary (default boundary is 10), set maximum guesses (default is infinity), exit
-//      Winning or hitting cancel during the game returns to main menu
-//      Hitting cancel in the menu should quit the game
-//      Validate that chosen option is a valid menu option
+const playerChoicePlayGame = 0;
+const playerChoiceChangeDifficullty = 1;
+const playerChoiceQuit = 2;
 
-// 3. Track number of guesses and display after win
+const easyUpperBoundary = 10;
+const standardUpperBoundary = 100;
+const hardUpperBoundary = 1000;
 
-let playerChoice = prompt(
-    "Welcome to Guess My Number!\nWhat would you like to do?\n" +
+let playerChoice = getPlayerChoice();
+let upperBoundary = easyUpperBoundary;
+
+while (playerChoice !== undefined && playerChoice !== playerChoiceQuit) {
+    switch (playerChoice) {
+        case playerChoicePlayGame:
+            playGame();
+            break;
+        case playerChoiceChangeDifficullty:
+            const newUpperBoundary = getUpperBoundary();
+
+            if (newUpperBoundary !== undefined) {
+                upperBoundary = newUpperBoundary;
+            }
+
+            break;
+    }
+
+    playerChoice = getPlayerChoice();
+}
+
+function getPlayerChoice() {
+    const menuMessage = "Welcome to Guess My Number!\nWhat would you like to do?\n" +
     "    1. Play\n" +
-    "    2. Quit"
-);
+    "    2. Change Difficuly\n" +
+    "    3. Quit";
 
-while (playerChoice === "1") {
-    playGame();
+    let playerChoice = prompt(menuMessage);
 
-    playerChoice = prompt(
-        "Welcome to Guess My Number!\nWhat would you like to do?\n" +
-        "    1. Play\n" +
-        "    2. Quit"
-    );
+    if (playerChoice === null) {
+        return;
+    }
+
+    let calculatedPlayerChoice = calculatePlayerChoice(playerChoice);
+
+    while (calculatedPlayerChoice === undefined) {
+        playerChoice = prompt("Please choose a valid menu option.\n" + menuMessage);
+
+        if (playerChoice === null) {
+            return;
+        }
+    
+        calculatedPlayerChoice = calculatePlayerChoice(playerChoice);
+    }
+
+    return calculatedPlayerChoice;
+}
+
+function calculatePlayerChoice(playerChoice) {
+    switch (playerChoice) {
+        case "1": return playerChoicePlayGame;
+        case "2": return playerChoiceChangeDifficullty;
+        case "3": return playerChoiceQuit;
+    }
 }
 
 function playGame() {
-    let difficullty = prompt(
-        "Please select difficulty level:\n" +
-        "    1. Easy (number will be between 1 and 10)\n" +
-        "    2. Standard (number will be between 1 and 100)\n" +
-        "    3. Hard (number will be between 1 and 1000)\n"
-    );
-
-    let upperBoundary = getUpperBoundary(difficullty);
-
-    while (isNaN(upperBoundary)) {
-        difficullty = prompt(
-            "Please enter a valid choice.\n" +
-            "Please select difficulty level:\n" +
-            "    1. Easy (number will be between 1 and 10)\n" +
-            "    2. Standard (number will be between 1 and 100)\n" +
-            "    3. Hard (number will be between 1 and 1000)\n"
-        );
-
-        upperBoundary = getUpperBoundary(difficullty);
-    }
-
     const secret = createSecret(upperBoundary);
 
-    let guess = promptGuess(upperBoundary);
+    let guess = promptGuess(upperBoundary, "");
 
     while (guess !== null && guess !== secret) {
         let hint;
 
         if (guess > secret) {
-            hint = "Too high, try again";
+            hint = "Too high, try again\n";
         } else {
-            hint = "Too low, try again";
+            hint = "Too low, try again\n";
         }
 
         guess = promptGuess(upperBoundary, hint);
@@ -69,20 +90,50 @@ function playGame() {
     }
 }
 
-function getUpperBoundary(difficullty) {
+function getUpperBoundary() {
+    let difficullty = prompt(
+        "Please select difficulty level:\n" +
+        "    1. Easy (number will be between 1 and 10)\n" +
+        "    2. Standard (number will be between 1 and 100)\n" +
+        "    3. Hard (number will be between 1 and 1000)\n"
+    );
+
+    if (difficullty === null) {
+        return;
+    }
+
+    let upperBoundary = calculateUpperBoundary(difficullty);
+
+    while (isNaN(upperBoundary)) {
+        difficullty = prompt(
+            "Please enter a valid choice.\n" +
+            "Please select difficulty level:\n" +
+            "    1. Easy (number will be between 1 and 10)\n" +
+            "    2. Standard (number will be between 1 and 100)\n" +
+            "    3. Hard (number will be between 1 and 1000)\n"
+        );
+
+        if (difficullty === null) {
+            return;
+        }
+
+        upperBoundary = calculateUpperBoundary(difficullty);
+    }
+
+    return upperBoundary;
+}
+
+function calculateUpperBoundary(difficullty) {
     switch (difficullty.toLowerCase().trim()) {
         case "1":
         case "easy":
-            return 10;
-            break;
+            return easyUpperBoundary;
         case "2":
         case "standard":
-            return 100;
-            break;
+            return standardUpperBoundary;
         case "3":
         case "hard":
-            return 1000;
-            break;
+            return hardUpperBoundary;
     }
 }
 
@@ -91,11 +142,7 @@ function createSecret(upperBoundary) {
 }
 
 function promptGuess(upperBoundary, hint) {
-    let guess = prompt(
-        hint === undefined ?
-            "Please enter your guess:" :
-            hint + "\nPlease enter your guess:"
-    );
+    let guess = prompt(hint + "Please enter your guess:");
 
     if (guess === null) {
         return null;
@@ -106,7 +153,7 @@ function promptGuess(upperBoundary, hint) {
     while (isNaN(guessAsNumber) || guessAsNumber < 1 || guessAsNumber > upperBoundary) {
         guess = prompt(
             "Please enter a valid number between 1 and " + upperBoundary + ".\n" +
-            hint + "\nPlease enter your guess:"
+            hint + "Please enter your guess:"
         );
 
         if (guess === null) {
