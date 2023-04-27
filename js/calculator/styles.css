@@ -1,0 +1,17 @@
+#result {
+    height: 2rem;
+    background: hsl(64, 76%, 69%);
+    border: 1px solid black;
+}
+
+#number-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    
+}
+
+.number-button {
+    flex: 1;
+    flex-basis: 30%;
+}
