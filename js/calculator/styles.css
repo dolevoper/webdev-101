@@ -1,17 +1,70 @@
-#result {
-    height: 2rem;
-    background: hsl(64, 76%, 69%);
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, button {
+    font-size: 1.5rem;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#screen {
+    height: 3rem;
+    background: hsl(45deg 50% 80%);
     border: 1px solid black;
+    border-radius: 2px;
 }
 
-#number-buttons {
+#operations-container {
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    
 }
 
-.number-button {
+#operations-container button {
     flex: 1;
-    flex-basis: 30%;
+}
+
+#main-container {
+    display: flex;
+}
+
+#numbers-container {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#numbers-container [data-value="0"] {
+    grid-column: 1 / 4;
+}
+
+#numbers-container [data-value="7"],
+#numbers-container [data-value="8"],
+#numbers-container [data-value="9"] {
+    grid-row-start: 1;
+}
+
+#numbers-container [data-value="4"],
+#numbers-container [data-value="5"],
+#numbers-container [data-value="6"] {
+    grid-row-start: 2;
+}
+
+#numbers-container [data-value="1"],
+#numbers-container [data-value="2"],
+#numbers-container [data-value="3"] {
+    grid-row-start: 3;
+}
+
+#state-operations {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
 }

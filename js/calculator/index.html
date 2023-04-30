@@ -10,19 +10,35 @@
 </head>
 
 <body>
-    <div id="result"></div>
-    <div id="number-buttons">
-        <button class="number-button" id="number-0">0</button>
-        <button class="number-button" id="number-1">1</button>
-        <button class="number-button" id="number-2">2</button>
-        <button class="number-button" id="number-3">3</button>
-        <button class="number-button" id="number-4">4</button>
-        <button class="number-button" id="number-5">5</button>
-        <button class="number-button" id="number-6">6</button>
-        <button class="number-button" id="number-7">7</button>
-        <button class="number-button" id="number-8">8</button>
-        <button class="number-button" id="number-9">9</button>
-    </div>
+    <main>
+        <div id="screen"></div>
+        <div id="operations-container">
+            <button>➕</button>
+            <button>➖</button>
+            <button>✖</button>
+            <button>➗</button>
+        </div>
+        <div id="main-container">
+            <div id="numbers-container">
+                <button data-value="0">0</button>
+                <button data-value="1">1</button>
+                <button data-value="2">2</button>
+                <button data-value="3">3</button>
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+                <button data-value="6">6</button>
+                <button data-value="7">7</button>
+                <button data-value="8">8</button>
+                <button data-value="9">9</button>
+            </div>
+            <div id="state-operations">
+                <button>=</button>
+                <button>C</button>
+                <button>CE</button>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
 </body>
 
 </html>
