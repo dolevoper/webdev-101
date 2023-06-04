@@ -1,0 +1,32 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+div {
+    margin: 0;
+}
+
+#board div {
+    display: flex;
+}
+
+#board button {
+    width: 50px;
+    height: 50px;
+}
