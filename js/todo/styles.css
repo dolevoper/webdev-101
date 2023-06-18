@@ -1,0 +1,65 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+h1, h2, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ol {
+    padding-left: 1rem;
+}
+
+input, button {
+    font-size: inherit;
+}
+
+form {
+    display: flex;
+}
+
+#todo-list label {
+    cursor: pointer;
+    display: flex;
+    gap: 8px
+}
+
+#todo-list input {
+    display: none;
+}
+
+#todo-list input:checked + label span {
+    text-decoration: line-through;
+}
+
+#todo-list input:checked + label::after {
+    content: '✔';
+    color: limegreen;
+    font-weight: 600;
+}
+
+button {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding-right: 0.7rem;
+}
+
+button::before {
+    content: '➕';
+}
